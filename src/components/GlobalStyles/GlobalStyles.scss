@@ -1,0 +1,19 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;1,500&family=Nunito:wght@300;400;500;600;700&family=Rowdies:wght@300;400;700&display=swap');
+
+:root {
+  --primary: rgb(254 44 85);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  // font-family: 'Montserrat', sans-serif;
+  // font-family: 'Rowdies', cursive;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed; // tối ưu load fonts từ google ?
+}
