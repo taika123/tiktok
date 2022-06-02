@@ -3,9 +3,19 @@
 
 :root {
   --primary: #fe2c55;
+  --black: #000;
+  --white: #fff;
+  --text-color: #333;
+
+  //DefaultLayout
+
+  --default-layout-header-height: 60px;
+  --default-layout-header-width: 1150px;
 }
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -20,4 +30,16 @@ body {
   font-size: 1.6rem;
   line-height: 1.5;
   text-rendering: optimizeSpeed; // tối ưu load fonts từ google ?
+}
+
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+
+a[href] {
+  color: var(--text-color);
+  text-decoration: none;
 }
