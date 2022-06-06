@@ -4,7 +4,7 @@ import styles from './Button.module.scss'
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles)
-function Button({ to, href, primary = false, outline = false, className, leftIcon, rightIcon, rounded = false, text = false, disabled = false, small = false, large = false, children, onClick, ...passprops }) {
+function Button({ to, href, primary = false, outline = false, outlined = false, className, leftIcon, rightIcon, rounded = false, text = false, disabled = false, small = false, large = false, children, onClick, ...passprops }) {
     let Comp = 'button'
     const props = {
         onClick,
@@ -36,6 +36,7 @@ function Button({ to, href, primary = false, outline = false, className, leftIco
         large,
         text,
         disabled,
+        outlined,
         rounded
     })
 
