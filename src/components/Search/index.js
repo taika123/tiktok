@@ -32,8 +32,6 @@ function Search() {
             return;
         }
 
-        setLoading(true);
-
         const fetchApi = async () => {
             setLoading(true);
 
