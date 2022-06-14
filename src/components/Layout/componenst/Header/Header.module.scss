@@ -24,16 +24,25 @@
   display: flex;
   align-items: center;
 }
+
+.action-upload {
+  margin-right: 7px;
+}
+
 .action-btn {
   // color:
   font-size: 2.4rem;
-  padding: 20px 15px;
+  padding: 20px 5px;
   background-color: transparent;
   line-height: 3.2rem;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
+
+  &.action-btn {
+    margin-left: var(--mr-2l);
+  }
 }
 // .action-custom {
 //   margin-right: 16px;

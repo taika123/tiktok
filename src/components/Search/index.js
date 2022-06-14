@@ -8,6 +8,7 @@ import classNames from 'classnames/bind'
 import styles from './Search.module.scss'
 import { SearchIcon } from './../Icons/index';
 import { useDebounce } from '~/hook';
+import * as searchServices from '~/apiServices/searchServices'
 
 const cx = classNames.bind(styles) // cx cho phép viết tên className dạng vd: post-item
 
@@ -33,18 +34,30 @@ function Search() {
 
         setLoading(true);
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then(res => res.json())
-            .then(res => {
-                // console.log(res.data)
-                setSearchResult(res.data)
-                setLoading(false);
-            })
+        const fetchApi = async () => {
+            setLoading(true);
 
-            .catch(err => {
-                console.log(err)
-                setLoading(false)
-            });
+            const result = await searchServices.search(debounced);
+
+            setSearchResult(result)
+
+            setLoading(false);
+
+            // try {
+            //     const res = await request.get('users/search', {
+            //         params: {
+            //             q: debounced,
+            //             type: 'less'
+            //         },
+            //     })
+            //     setSearchResult(res.data)
+            //     setLoading(false);
+            // } catch (error) {
+            //     setLoading(false);
+            // }
+        }
+
+        fetchApi();
 
     }, [debounced])
 

@@ -99,7 +99,7 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Button outlined leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
+                            <Button outlined className={cx('action-upload')} leftIcon={<FontAwesomeIcon icon={faPlus} />}>Upload</Button>
                             <Tippy delay={[0, 200]} content="Upload video" placement="bottom">
                                 <button className={cx('action-btn')}>
                                     <MessageIcon className={cx('action-custom')} />
