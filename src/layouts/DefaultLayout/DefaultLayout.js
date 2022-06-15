@@ -1,8 +1,8 @@
-import Header from '~/components/Layout/componenst/Header'
-// import Sidebar from './Sidebar'
+import Header from '~/layouts/componenst/Header'
+import Sidebar from '../componenst/Sidebar'
 import styles from './DefaultLayout.module.scss'
 import classNames from 'classnames/bind'
-
+import PropTypes from 'prop-types'
 const cx = classNames.bind(styles)
 
 function DefaultLayout({ children }) {
@@ -10,7 +10,7 @@ function DefaultLayout({ children }) {
         <div className={cx('wrapper')}>
             <Header />
             <div className={cx('container')}>
-                {/* <Sidebar /> */}
+                <Sidebar />
                 <div className={cx('content')}>
                     {children}
                 </div>
@@ -19,4 +19,7 @@ function DefaultLayout({ children }) {
     )
 }
 
+DefaultLayout.propTypes = {
+    children: PropTypes.node.isRequired
+}
 export default DefaultLayout

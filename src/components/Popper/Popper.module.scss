@@ -7,4 +7,6 @@
   max-height: min((100vh - 96px) - 60px, 734px);
   // min-height: 200px;
   padding-top: 8px;
+  display: flex;
+  flex-direction: column;
 }

@@ -1,18 +1,19 @@
 import React from 'react'
+import config from '~/config'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus, faEllipsisVertical, faEarthAmericas, faCircleQuestion, faUser, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
+import { InboxIcon, MessageIcon } from '~/components/Icons/index';
+import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import classNames from 'classnames/bind'
 import styles from './Header.module.scss'
 import Tippy from '@tippyjs/react'; // different import path!
 import images from '~/assets/images'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus, faEllipsisVertical, faEarthAmericas, faCircleQuestion, faUser, faCoins, faGear, faSignOut } from '@fortawesome/free-solid-svg-icons'
 import Button from '~/components/Button/index';
 import Menu from '~/components/Popper/Menu/index';
-import { faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import 'tippy.js/dist/tippy.css'; // optional
-import { Link } from 'react-router-dom';
-import { InboxIcon, MessageIcon } from './../../../Icons/index';
 import Image from '~/components/Image';
-import Search from './../../../../components/Search';
+import Search from '~/layouts/componenst/Search';
 
 const cx = classNames.bind(styles) // cx cho phép viết tên className dạng vd: post-item
 
@@ -92,7 +93,9 @@ function Header() {
 
         < header className={cx('wrapper')} >
             <div className={cx('inner')}>
-                <Link to='/'><img src={images.logo} alt="tiktok"></img></Link>
+                <Link to={config.routes.home} className={cx('logo')}>
+                    <img src={images.logo} alt="tiktok"></img>
+                </Link>
 
                 <Search />
 
@@ -123,7 +126,7 @@ function Header() {
                         onChange={handleMenuChange}
                     >
                         {currentUser ? (
-                            <Image src="https://p16-sign-sg.tiktokcdn.com/aweme/100x100/tiktok-obj/1663032433476609.jpeg?x-expires=1654318800&x-signature=Aqo2EGVfYYFWWxK7dF7%2FtxGUDrM%3D"
+                            <Image src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/50a6cd9972dd1f6f7264b1778902407c~c5_100x100.jpeg?x-expires=1655373600&x-signature=WkdBvSVlnqzOS56I5anh7h2bOjo%3D"
                                 alt="hinhanh"
                                 className={cx('user-avatar')}></Image>
                         ) : (

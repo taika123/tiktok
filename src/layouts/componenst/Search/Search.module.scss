@@ -20,10 +20,12 @@
   input {
     flex: 1;
     height: 100%;
+    padding-right: 40px; // gioi han chu trong input khi nhap
     color: var(--black);
     font-size: 1.6rem;
     background-color: transparent;
-    caret-color: red;
+    caret-color: var(--primary);
+    // font-family: var(--font--family);
   }
   input:not(:placeholder-shown) ~ .search-btn {
     color: rgba(22, 24, 35, 0.75);

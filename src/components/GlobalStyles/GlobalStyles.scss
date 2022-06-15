@@ -19,6 +19,7 @@
   --mr-2l: 10px;
   --mr-r: 5px;
   --mr-2r: 10px;
+  --font--family: 'ProximaNova', sans-serif;
 }
 
 * {
@@ -34,11 +35,29 @@ html {
 body {
   // font-family: 'Montserrat', sans-serif;
   // font-family: 'Rowdies', cursive;
-  font-family: 'ProximaNova', sans-serif;
+  font-family: var(--font--family);
   font-size: 1.6rem;
   line-height: 1.5;
   color: var(--text-color);
   text-rendering: optimizeSpeed; // tối ưu load fonts từ google ?
+  overflow-y: overlay;
+}
+
+//scrollbar css
+
+html *::-webkit-scrollbar {
+  border-radius: 0;
+  width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+html *::-webkit-scrollbar-track {
+  border-radius: 0;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 button,
@@ -48,7 +67,7 @@ input,
   border: none;
 }
 
-a[href] {
+a {
   color: var(--text-color);
   text-decoration: none;
   // font-weight: 800;
